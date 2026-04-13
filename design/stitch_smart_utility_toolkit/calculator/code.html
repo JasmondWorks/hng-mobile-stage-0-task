@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UTILITY Calculator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eded",
+                        "tertiary": "#575e78",
+                        "error": "#9e3f4e",
+                        "surface-dim": "#dbdad9",
+                        "background": "#fcf9f8",
+                        "inverse-on-surface": "#9e9c9c",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed-variant": "#4e556f",
+                        "surface": "#fcf9f8",
+                        "on-secondary-fixed": "#403f3f",
+                        "surface-tint": "#483ff0",
+                        "outline-variant": "#b3b1b1",
+                        "on-error-container": "#782232",
+                        "on-tertiary-fixed": "#313951",
+                        "on-surface": "#323232",
+                        "on-secondary": "#fbf8f8",
+                        "on-primary-fixed-variant": "#453ced",
+                        "secondary": "#605f5f",
+                        "primary-fixed": "#e2dfff",
+                        "secondary-dim": "#545353",
+                        "on-secondary-fixed-variant": "#5c5b5b",
+                        "error-container": "#ff8b9a",
+                        "on-tertiary": "#f9f8ff",
+                        "on-primary-container": "#3a2de3",
+                        "primary-dim": "#3a2ee4",
+                        "on-secondary-container": "#525151",
+                        "primary": "#483ff0",
+                        "tertiary-fixed": "#d2d9f8",
+                        "primary-container": "#e2dfff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#fff7f7",
+                        "secondary-container": "#e5e2e1",
+                        "surface-container-highest": "#e4e2e2",
+                        "surface-bright": "#fcf9f8",
+                        "primary-fixed-dim": "#d2d0ff",
+                        "secondary-fixed-dim": "#d6d4d3",
+                        "inverse-primary": "#8382ff",
+                        "outline": "#7b7a7a",
+                        "error-dim": "#4f0116",
+                        "on-primary-fixed": "#2300d2",
+                        "surface-variant": "#e4e2e2",
+                        "inverse-surface": "#0e0e0e",
+                        "tertiary-dim": "#4b526c",
+                        "on-surface-variant": "#5f5f5f",
+                        "on-tertiary-container": "#444c65",
+                        "tertiary-fixed-dim": "#c4cbe9",
+                        "tertiary-container": "#d2d9f8",
+                        "on-background": "#323232",
+                        "surface-container-high": "#eae8e7",
+                        "on-primary": "#faf6ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #323232;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(50,50,50,0.06)] transition-colors duration-300">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#483ff0]">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<span class="text-sm font-bold tracking-[0.05em] uppercase text-[#323232] dark:text-[#fcf9f8]">UTILITY</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#323232]/60 hover:opacity-70 transition-opacity cursor-pointer" data-icon="history">history</span>
+<span class="material-symbols-outlined text-[#323232]/60 hover:opacity-70 transition-opacity cursor-pointer" data-icon="settings">settings</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-lg mx-auto min-h-screen flex flex-col gap-8">
+<!-- Large Display Area -->
+<section class="flex flex-col items-end justify-end min-h-[160px] p-6 bg-surface-container-low rounded-xl">
+<div class="flex flex-col items-end gap-2 w-full">
+<!-- Result History -->
+<div class="flex flex-col items-end opacity-40 font-mono text-sm tracking-tight mb-2">
+<p>1,240.50 × 12 = 14,886</p>
+<p>log(100) + 42 = 44</p>
+</div>
+<!-- Current Input -->
+<div class="text-on-surface-variant font-mono text-lg tracking-wider">
+                    sin(45) * 0.707
+                </div>
+<!-- Active Result -->
+<div class="text-on-surface font-headline font-extrabold text-5xl tracking-tighter mt-1">
+                    0.499
+                </div>
+</div>
+</section>
+<!-- Scientific Mode Toggle -->
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Rad</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface/40">Deg</span>
+</div>
+<button class="bg-surface-container-high rounded-full px-4 py-1.5 flex items-center gap-2 active:scale-95 transition-transform">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface">Scientific</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Keypad Grid -->
+<section class="grid grid-cols-4 gap-4">
+<!-- Row Scientific Functions -->
+<button class="h-14 flex items-center justify-center bg-surface-container-low text-on-surface-variant font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-surface-container transition-colors active:scale-95">sin</button>
+<button class="h-14 flex items-center justify-center bg-surface-container-low text-on-surface-variant font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-surface-container transition-colors active:scale-95">cos</button>
+<button class="h-14 flex items-center justify-center bg-surface-container-low text-on-surface-variant font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-surface-container transition-colors active:scale-95">log</button>
+<button class="h-14 flex items-center justify-center bg-surface-container-low text-error font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-error-container/20 transition-colors active:scale-95">AC</button>
+<!-- Numeric & Core Operators -->
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">7</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">8</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">9</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high text-primary font-headline font-bold text-xl rounded-xl hover:bg-primary-container transition-colors active:scale-95">÷</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">4</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">5</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">6</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high text-primary font-headline font-bold text-xl rounded-xl hover:bg-primary-container transition-colors active:scale-95">×</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">1</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">2</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">3</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high text-primary font-headline font-bold text-xl rounded-xl hover:bg-primary-container transition-colors active:scale-95">−</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">0</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">.</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest text-on-surface font-headline font-semibold text-xl rounded-xl shadow-sm hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="backspace">backspace</span>
+</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high text-primary font-headline font-bold text-xl rounded-xl hover:bg-primary-container transition-colors active:scale-95">+</button>
+<!-- Equals Action -->
+<button class="col-span-4 h-16 flex items-center justify-center bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white font-headline font-extrabold text-2xl rounded-xl shadow-lg active:scale-95 transition-all duration-200">
+                =
+            </button>
+</section>
+<!-- Tooltip or Insight Section -->
+<div class="mt-4 p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/15 flex gap-4 items-start">
+<div class="bg-primary-fixed p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="info">info</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface">Did you know?</p>
+<p class="text-sm text-on-surface-variant leading-relaxed">You can swipe left on the display area to clear your calculation history or long-press an operator to view advanced functions.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4">
+<div class="w-[90%] max-w-md rounded-full bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl border border-[#b3b1b1]/15 shadow-[0_24px_40px_rgba(50,50,50,0.06)] flex justify-around items-center h-20 px-2">
+<!-- Public/Explore -->
+<button class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</button>
+<!-- Calculate (Active) -->
+<button class="bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-full p-3 scale-110 shadow-lg active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="calculate" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</button>
+<!-- History -->
+<button class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<!-- Settings -->
+<button class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</nav>
+</body></html>

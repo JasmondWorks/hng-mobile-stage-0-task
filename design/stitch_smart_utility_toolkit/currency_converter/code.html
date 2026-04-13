@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Currency Converter - Smart Utility Toolkit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#e2dfff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-dim": "#545353",
+                    "on-primary-fixed": "#2300d2",
+                    "secondary-container": "#e5e2e1",
+                    "primary": "#483ff0",
+                    "surface-tint": "#483ff0",
+                    "on-error-container": "#782232",
+                    "primary-fixed-dim": "#d2d0ff",
+                    "inverse-primary": "#8382ff",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-dim": "#4b526c",
+                    "on-surface-variant": "#5f5f5f",
+                    "on-primary-fixed-variant": "#453ced",
+                    "on-primary": "#faf6ff",
+                    "inverse-on-surface": "#9e9c9c",
+                    "tertiary": "#575e78",
+                    "on-tertiary": "#f9f8ff",
+                    "on-secondary": "#fbf8f8",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary-fixed": "#d2d9f8",
+                    "on-secondary-container": "#525151",
+                    "tertiary-fixed-dim": "#c4cbe9",
+                    "tertiary-container": "#d2d9f8",
+                    "error": "#9e3f4e",
+                    "on-tertiary-fixed": "#313951",
+                    "on-primary-container": "#3a2de3",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "surface-dim": "#dbdad9",
+                    "on-tertiary-container": "#444c65",
+                    "on-surface": "#323232",
+                    "on-tertiary-fixed-variant": "#4e556f",
+                    "surface-container-high": "#eae8e7",
+                    "outline-variant": "#b3b1b1",
+                    "surface-container-highest": "#e4e2e2",
+                    "outline": "#7b7a7a",
+                    "on-secondary-fixed": "#403f3f",
+                    "on-error": "#fff7f7",
+                    "surface-variant": "#e4e2e2",
+                    "surface-bright": "#fcf9f8",
+                    "primary-dim": "#3a2ee4",
+                    "inverse-surface": "#0e0e0e",
+                    "error-dim": "#4f0116",
+                    "background": "#fcf9f8",
+                    "surface": "#fcf9f8",
+                    "primary-fixed": "#e2dfff",
+                    "secondary": "#605f5f",
+                    "surface-container": "#f0eded",
+                    "on-background": "#323232",
+                    "error-container": "#ff8b9a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_8px_32px_0_rgba(50,50,50,0.06)] transition-colors duration-300">
+<div class="flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#483ff0] active:scale-95 transition-transform cursor-pointer">grid_view</span>
+<h1 class="font-['Inter'] tracking-tight font-bold text-[#323232] dark:text-[#fcf9f8] text-sm uppercase tracking-[0.05em]">UTILITY</h1>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-[#323232]/60 hover:opacity-70 transition-opacity cursor-pointer">search</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a user with a clean white background and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tLg7pkR1BOc8CVnlRs1NydzkRvz0erIOlEF9xu8ydSLXpgmTUp99NC0adHdXs2vwys4H4NkR1bKgL7hWRcn1Tnq-f97Ks7wJNLd8FK4fX0LoXvC5SaeRX5nYvOrAwuHMKnM7avl_D7cwqgRaET5aebfLCAElQ9PynjwXQ52cveelWTad2Q59OgfQBSXvEiYHhvQ7Wj6dLqmdG2K2Yxc-PUYDK0ENkoMbOUlgG_frZthS2wzB2dXrbFICQBjIpdOm-Mx8l0rlMGrQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Screen Title Section -->
+<section class="space-y-1">
+<span class="label-sm text-primary font-bold tracking-widest uppercase opacity-80">Financial Tools</span>
+<h2 class="text-display-md font-extrabold tracking-tight text-on-surface">Currency Converter</h2>
+</section>
+<!-- Main Converter UI: Bento-ish Layout -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Conversion Card -->
+<div class="bg-surface-container-low rounded-xl p-6 space-y-8">
+<!-- Base Currency -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="close up of the United States flag showing stars and stripes with soft fabric texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoZPlywbXnx7bYJC49rI0xVYb4DcLRwIzaYR4RUwParXIOJyC8cIPkrRtHB9bRfsazA0tWFoyzaQL9XJ7rAGduXeFOo7RNTInHBVO45FoZqh3SPaEJFyqOX3EJWiahjxgAa7vOAEJ7hvqk9Nk9088MIEdyaCZHmIYwYchNpqHqE-5b0iai-GMQIXESkRN550Z_1y8Mv_kc2cAqYUpXMYKRgxUC5nIx8sR4b_n1laQ3K_C9r76_wOAsqZDMZuGHQBJHDDCFnX0Hoebv"/>
+</div>
+<div>
+<p class="label-md font-bold text-on-surface-variant tracking-wider uppercase">USD</p>
+<p class="body-sm text-outline">United States Dollar</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-display-md font-bold tracking-tighter text-on-surface">1,240.00</span>
+</div>
+</div>
+<!-- Swap Divider -->
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-x-0 h-[1px] bg-outline-variant/15"></div>
+<button class="relative bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-all z-10">
+<span class="material-symbols-outlined">swap_vert</span>
+</button>
+</div>
+<!-- Target Currency -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface shadow-sm flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="European Union flag with gold stars on a blue background in a circular frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4bPXcRDdNkc5TkRS46-obX5xO_hE6vhHhRuGYOKWhMx2_dXMrC81JxuYiPskcL8zLhWJj5ytBwkOgWe2cswIbAMCnO8hlQzqF_NxgluMUIo1PQED_d-Iwz9Ce8K6uHHmVRMJ8GRwkqKpmeUNLgSUbZhqNaUptMzrmeH6N3knNNPgXe8U-RVtgirybaxViOBCtFUnscSSzFBkwC2P57MfvQR3ruG8IMA7JqX1LVUjpPvo_dKwcQql7VlsxcH_6927sOUdlNaqxWXJo"/>
+</div>
+<div>
+<p class="label-md font-bold text-primary tracking-wider uppercase">EUR</p>
+<p class="body-sm text-outline">Euro Member Countries</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-display-md font-bold tracking-tighter text-primary">1,139.84</span>
+</div>
+</div>
+</div>
+<!-- Stats & Sparkline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-5 rounded-xl flex flex-col justify-between h-32">
+<div>
+<p class="label-sm font-bold text-outline uppercase tracking-widest">Rate (1 USD)</p>
+<p class="text-title-lg font-bold">0.9192 EUR</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>+0.24% today</span>
+</div>
+</div>
+<!-- Sparkline Representation -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-5 rounded-xl h-32 flex flex-col justify-between">
+<p class="label-sm font-bold text-outline uppercase tracking-widest">7D History</p>
+<div class="flex-grow flex items-end gap-1 px-1 py-2">
+<div class="flex-1 bg-surface-container-high h-[40%] rounded-full"></div>
+<div class="flex-1 bg-surface-container-high h-[55%] rounded-full"></div>
+<div class="flex-1 bg-surface-container-high h-[45%] rounded-full"></div>
+<div class="flex-1 bg-surface-container-high h-[70%] rounded-full"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-full"></div>
+<div class="flex-1 bg-primary-dim h-[100%] rounded-full"></div>
+<div class="flex-1 bg-primary h-[90%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Custom Numeric Keypad -->
+<section class="space-y-4">
+<div class="grid grid-cols-3 gap-3">
+<!-- Row 1 -->
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">1</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">2</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">3</button>
+<!-- Row 2 -->
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">4</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">5</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">6</button>
+<!-- Row 3 -->
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">7</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">8</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">9</button>
+<!-- Row 4 -->
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">.</button>
+<button class="h-16 rounded-xl bg-surface-container-lowest text-on-surface font-bold text-xl active:bg-surface-container-high transition-colors">0</button>
+<button class="h-16 rounded-xl bg-surface-container-low text-on-surface font-bold text-xl active:scale-95 transition-all">
+<span class="material-symbols-outlined">backspace</span>
+</button>
+</div>
+<button class="w-full py-4 bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95 transition-transform">
+                Convert Now
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4">
+<div class="bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full border border-[#b3b1b1]/15 shadow-[0_24px_40px_rgba(50,50,50,0.06)] flex justify-around items-center h-16">
+<div class="bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-full p-3 scale-110 shadow-lg cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+</div>
+<div class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">straighten</span>
+</div>
+<div class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div class="text-[#323232]/40 dark:text-[#fcf9f8]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+</nav>
+</body></html>

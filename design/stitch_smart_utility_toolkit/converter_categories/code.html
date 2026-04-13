@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit Converter</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "on-surface-variant": "#5f5f5f",
+                    "on-tertiary": "#f9f8ff",
+                    "on-secondary-container": "#525151",
+                    "tertiary-container": "#d2d9f8",
+                    "inverse-on-surface": "#9e9c9c",
+                    "on-primary-container": "#3a2de3",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "on-primary-fixed": "#2300d2",
+                    "tertiary-fixed-dim": "#c4cbe9",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "primary": "#483ff0",
+                    "secondary": "#605f5f",
+                    "primary-dim": "#3a2ee4",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary-dim": "#545353",
+                    "on-tertiary-fixed-variant": "#4e556f",
+                    "on-tertiary-fixed": "#313951",
+                    "inverse-surface": "#0e0e0e",
+                    "on-surface": "#323232",
+                    "on-error": "#fff7f7",
+                    "surface-dim": "#dbdad9",
+                    "surface-container-highest": "#e4e2e2",
+                    "error": "#9e3f4e",
+                    "background": "#fcf9f8",
+                    "outline-variant": "#b3b1b1",
+                    "error-container": "#ff8b9a",
+                    "tertiary-dim": "#4b526c",
+                    "surface": "#fcf9f8",
+                    "outline": "#7b7a7a",
+                    "secondary-container": "#e5e2e1",
+                    "surface-variant": "#e4e2e2",
+                    "on-tertiary-container": "#444c65",
+                    "on-background": "#323232",
+                    "surface-container-high": "#eae8e7",
+                    "surface-tint": "#483ff0",
+                    "tertiary": "#575e78",
+                    "on-secondary": "#fbf8f8",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e2dfff",
+                    "primary-fixed-dim": "#d2d0ff",
+                    "on-primary-fixed-variant": "#453ced",
+                    "inverse-primary": "#8382ff",
+                    "on-primary": "#faf6ff",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary-fixed": "#d2d9f8",
+                    "error-dim": "#4f0116",
+                    "on-error-container": "#782232",
+                    "primary-container": "#e2dfff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .kinetic-shadow {
+            box-shadow: 0 8px 32px rgba(50, 50, 50, 0.06);
+        }
+        .glass-shell {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-screen-xl mx-auto">
+<button class="active:scale-95 transition-transform text-[#483ff0] dark:text-[#5852FF] hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-[#323232] dark:text-[#fcf9f8] font-['Inter']">Unit Converter</h1>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<header class="mb-12">
+<h2 class="text-display-md font-extrabold tracking-tighter text-on-surface mb-2 leading-tight">Choose a<br/>Dimension</h2>
+<p class="text-on-surface-variant font-medium tracking-wide label-md">6 PRECISION MODULES AVAILABLE</p>
+</header>
+<!-- Conversion Types List -->
+<section class="space-y-4">
+<!-- Length -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-container text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="straighten">straighten</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Length</h3>
+<p class="text-sm text-on-surface-variant">Metric &amp; Imperial units</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Temperature -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="thermostat">thermostat</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Temperature</h3>
+<p class="text-sm text-on-surface-variant">Celsius, Fahrenheit, Kelvin</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Weight -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="weight">weight</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Weight</h3>
+<p class="text-sm text-on-surface-variant">Kilograms to Pounds &amp; more</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Area -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="square_foot">square_foot</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Area</h3>
+<p class="text-sm text-on-surface-variant">Spatial measurements</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Volume -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="opacity">opacity</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Volume</h3>
+<p class="text-sm text-on-surface-variant">Liquid and dry measures</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Speed -->
+<div class="group cursor-pointer active:scale-[0.98] transition-all duration-200">
+<div class="flex items-center justify-between p-6 rounded-xl bg-surface-container-lowest kinetic-shadow hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-2xl" data-icon="speed">speed</span>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Speed</h3>
+<p class="text-sm text-on-surface-variant">Velocity and acceleration</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Decorative Aesthetic Element -->
+<div class="mt-12 rounded-2xl overflow-hidden h-48 relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+<img class="w-full h-full object-cover grayscale opacity-20" data-alt="close-up of a high-precision vintage ruler and metal drafting tools on a clean studio surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM8P0GGrmqnwuIBZzm9Vi6apOduPTJqIcFvCayPn7FyBLZhrnlsPXtHzffgzMcxSb_vAQ4h2iLnWUjdTwFQZuuXDKSIwNu01NtbwBxC78oTtemJsxbYQaq06nXgAZ_PXHlmfxu5sIN142WJQZLJCojZiOXu5FJO0io5yssmc0eZJycMhRafoYKKxs4w6eMMrE1eCyWJhKWupt5D8TyO0gk4zUV67noamaRNrnFc67TaePOPKkQH2KIiJMtu7BEkIB2kLLQCDRZkCZS"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center px-6">
+<p class="text-xs uppercase tracking-widest font-bold text-on-surface-variant opacity-60">Engineered for Accuracy</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<div class="fixed bottom-0 w-full z-50 flex justify-around items-center pb-8">
+<nav class="bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(50,50,50,0.06)] fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-4 py-3 flex justify-around items-center">
+<!-- Sync Alt (Active) -->
+<button class="active:scale-90 transition-transform duration-200 bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-full p-3 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</button>
+<!-- Calculate -->
+<button class="active:scale-90 transition-transform duration-200 text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+</button>
+<!-- Schedule -->
+<button class="active:scale-90 transition-transform duration-200 text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</button>
+<!-- Settings -->
+<button class="active:scale-90 transition-transform duration-200 text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</nav>
+</div>
+</body></html>

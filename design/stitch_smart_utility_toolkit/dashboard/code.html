@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Utility Toolkit - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container": "#f0eded",
+                    "on-surface-variant": "#5f5f5f",
+                    "on-tertiary": "#f9f8ff",
+                    "on-secondary-container": "#525151",
+                    "tertiary-container": "#d2d9f8",
+                    "inverse-on-surface": "#9e9c9c",
+                    "on-primary-container": "#3a2de3",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "on-primary-fixed": "#2300d2",
+                    "tertiary-fixed-dim": "#c4cbe9",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "primary": "#483ff0",
+                    "secondary": "#605f5f",
+                    "primary-dim": "#3a2ee4",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary-dim": "#545353",
+                    "on-tertiary-fixed-variant": "#4e556f",
+                    "on-tertiary-fixed": "#313951",
+                    "inverse-surface": "#0e0e0e",
+                    "on-surface": "#323232",
+                    "on-error": "#fff7f7",
+                    "surface-dim": "#dbdad9",
+                    "surface-container-highest": "#e4e2e2",
+                    "error": "#9e3f4e",
+                    "background": "#fcf9f8",
+                    "outline-variant": "#b3b1b1",
+                    "error-container": "#ff8b9a",
+                    "tertiary-dim": "#4b526c",
+                    "surface": "#fcf9f8",
+                    "outline": "#7b7a7a",
+                    "secondary-container": "#e5e2e1",
+                    "surface-variant": "#e4e2e2",
+                    "on-tertiary-container": "#444c65",
+                    "on-background": "#323232",
+                    "surface-container-high": "#eae8e7",
+                    "surface-tint": "#483ff0",
+                    "tertiary": "#575e78",
+                    "on-secondary": "#fbf8f8",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e2dfff",
+                    "primary-fixed-dim": "#d2d0ff",
+                    "on-primary-fixed-variant": "#453ced",
+                    "inverse-primary": "#8382ff",
+                    "on-primary": "#faf6ff",
+                    "surface-bright": "#fcf9f8",
+                    "testiary-fixed": "#d2d9f8",
+                    "error-dim": "#4f0116",
+                    "on-error-container": "#782232",
+                    "primary-container": "#e2dfff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#323232] dark:text-[#fcf9f8]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Inter'] font-semibold tracking-tight text-on_surface text-[#323232] dark:text-[#fcf9f8]">Unit Converter</h1>
+</div>
+<div class="text-lg font-bold tracking-tight text-[#323232] dark:text-[#fcf9f8]">
+                SMART TOOLKIT
+            </div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-screen-xl mx-auto">
+<!-- Hero Greeting Section -->
+<section class="mb-10">
+<h2 class="text-display-md font-extrabold tracking-tight text-on-surface mb-2" style="letter-spacing: -0.02em;">Good Morning</h2>
+<p class="text-on-surface-variant body-md mb-8">What do you need to calculate today?</p>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-on-surface-variant group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-14 bg-surface-container rounded-xl pl-12 pr-6 border-none focus:ring-1 focus:ring-outline-variant/30 text-on-surface placeholder:text-on-surface-variant/60 transition-all outline-none" placeholder="Search for tools, units, or world clocks..." type="text"/>
+</div>
+</section>
+<!-- Tool Categories Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<!-- Unit Converter Card (Active/Featured) -->
+<div class="col-span-2 row-span-1 bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_32px_rgba(50,50,50,0.03)] hover:opacity-70 transition-opacity flex flex-col justify-between h-48 group">
+<div class="flex justify-between items-start">
+<div class="bg-primary/10 text-primary p-3 rounded-xl">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-primary uppercase">MOST USED</span>
+</div>
+<div>
+<h3 class="text-title-lg font-bold text-on-surface">Unit Converter</h3>
+<p class="text-on-surface-variant text-sm mt-1">Weight, Length, Temp &amp; more</p>
+</div>
+</div>
+<!-- Currency Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_32px_rgba(50,50,50,0.03)] hover:opacity-70 transition-opacity flex flex-col gap-4 aspect-square">
+<div class="bg-surface-container text-secondary p-3 rounded-xl w-fit">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<h3 class="text-title-md font-bold text-on-surface">Currency</h3>
+<p class="text-on-surface-variant text-xs mt-1 leading-relaxed">Real-time exchange rates</p>
+</div>
+</div>
+<!-- Calculator Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_32px_rgba(50,50,50,0.03)] hover:opacity-70 transition-opacity flex flex-col gap-4 aspect-square">
+<div class="bg-surface-container text-secondary p-3 rounded-xl w-fit">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+</div>
+<div>
+<h3 class="text-title-md font-bold text-on-surface">Calculator</h3>
+<p class="text-on-surface-variant text-xs mt-1 leading-relaxed">Scientific &amp; basic</p>
+</div>
+</div>
+<!-- World Clock Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_32px_rgba(50,50,50,0.03)] hover:opacity-70 transition-opacity flex flex-col gap-4 aspect-square">
+<div class="bg-surface-container text-secondary p-3 rounded-xl w-fit">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div>
+<h3 class="text-title-md font-bold text-on-surface">World Clock</h3>
+<p class="text-on-surface-variant text-xs mt-1 leading-relaxed">Global time synchronization</p>
+</div>
+</div>
+<!-- Level Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_32px_rgba(50,50,50,0.03)] hover:opacity-70 transition-opacity flex flex-col gap-4 aspect-square">
+<div class="bg-surface-container text-secondary p-3 rounded-xl w-fit">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+</div>
+<div>
+<h3 class="text-title-md font-bold text-on-surface">Level</h3>
+<p class="text-on-surface-variant text-xs mt-1 leading-relaxed">Precision bubble tool</p>
+</div>
+</div>
+<!-- More Tools Card (Horizontal) -->
+<div class="col-span-2 bg-surface-container-low p-6 rounded-xl hover:opacity-70 transition-opacity flex items-center gap-6">
+<div class="bg-on-surface/5 text-on-surface p-3 rounded-xl">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</div>
+<div class="flex-1">
+<h3 class="text-title-md font-bold text-on-surface">More Utility Tools</h3>
+<p class="text-on-surface-variant text-xs mt-1">QR Scanner, Compass, Ruler...</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+<!-- Quick Glance Section -->
+<section class="mt-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-['Inter'] label-sm uppercase tracking-widest text-on-surface-variant">Active Measurements</h3>
+<button class="text-primary text-xs font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">Clear All</button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">150 Pounds to Kilograms</p>
+<p class="text-xs text-on-surface-variant">Converted 10m ago</p>
+</div>
+</div>
+<p class="text-sm font-mono font-bold text-on-surface">68.03 kg</p>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">USD to EUR</p>
+<p class="text-xs text-on-surface-variant">Live Rate • 1.00 USD = 0.92 EUR</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40" data-icon="star">star</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center pb-8 bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full px-4 py-3 bg-[#fcf9f8]/80 dark:bg-[#323232]/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(50,50,50,0.06)] flex justify-around items-center">
+<!-- sync_alt (Active) -->
+<button class="bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-full p-3 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="sync_alt">sync_alt</span>
+</button>
+<!-- calculate -->
+<button class="text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+</button>
+<!-- schedule -->
+<button class="text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</button>
+<!-- settings -->
+<button class="text-[#323232] dark:text-[#fcf9f8] p-3 hover:bg-[#f6f3f2] dark:hover:bg-white/10 rounded-full transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eded",
+                    "tertiary": "#575e78",
+                    "error": "#9e3f4e",
+                    "surface-dim": "#dbdad9",
+                    "background": "#fcf9f8",
+                    "inverse-on-surface": "#9e9c9c",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "on-tertiary-fixed-variant": "#4e556f",
+                    "surface": "#fcf9f8",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-tint": "#483ff0",
+                    "outline-variant": "#b3b1b1",
+                    "on-error-container": "#782232",
+                    "on-tertiary-fixed": "#313951",
+                    "on-surface": "#323232",
+                    "on-secondary": "#fbf8f8",
+                    "on-primary-fixed-variant": "#453ced",
+                    "secondary": "#605f5f",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-dim": "#545353",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "error-container": "#ff8b9a",
+                    "on-tertiary": "#f9f8ff",
+                    "on-primary-container": "#3a2de3",
+                    "primary-dim": "#3a2ee4",
+                    "on-secondary-container": "#525151",
+                    "primary": "#483ff0",
+                    "tertiary-fixed": "#d2d9f8",
+                    "primary-container": "#e2dfff",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-error": "#fff7f7",
+                    "secondary-container": "#e5e2e1",
+                    "surface-container-highest": "#e4e2e2",
+                    "surface-bright": "#fcf9f8",
+                    "primary-fixed-dim": "#d2d0ff",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "inverse-primary": "#8382ff",
+                    "outline": "#7b7a7a",
+                    "error-dim": "#4f0116",
+                    "on-primary-fixed": "#2300d2",
+                    "surface-variant": "#e4e2e2",
+                    "inverse-surface": "#0e0e0e",
+                    "tertiary-dim": "#4b526c",
+                    "on-surface-variant": "#5f5f5f",
+                    "on-tertiary-container": "#444c65",
+                    "tertiary-fixed-dim": "#c4cbe9",
+                    "tertiary-container": "#d2d9f8",
+                    "on-background": "#323232",
+                    "surface-container-high": "#eae8e7",
+                    "on-primary": "#faf6ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "mono": ["JetBrains Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .mono-text { font-family: 'JetBrains Mono', monospace; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8]/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-[0_8px_32px_0_rgba(50,50,50,0.06)] flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#483ff0] active:scale-95 transition-transform cursor-pointer" data-icon="grid_view">grid_view</span>
+<span class="text-sm font-bold tracking-[0.05em] uppercase text-[#323232]">UTILITY</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#323232]/60 hover:opacity-70 transition-opacity cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-[#323232]/60 hover:opacity-70 transition-opacity cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<h1 class="text-display-md font-extrabold tracking-tight mb-2 text-on-surface">World Clock</h1>
+<p class="text-on-surface-variant body-md tracking-wide">Sync across global horizons with kinetic precision.</p>
+</section>
+<!-- Current Local Time (Primary Anchor) -->
+<section class="mb-16 relative overflow-hidden bg-surface-container-low rounded-xl p-8 group">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="schedule">schedule</span>
+</div>
+<div class="relative z-10">
+<span class="label-md uppercase tracking-[0.1em] font-bold text-primary mb-2 block">Local Time • San Francisco</span>
+<div class="flex items-baseline gap-2">
+<span class="text-6xl font-extrabold tracking-tighter mono-text">09:42</span>
+<span class="text-xl font-medium text-on-surface-variant mono-text">AM</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-2 font-medium">Monday, June 12</p>
+</div>
+</section>
+<!-- City List (Bento-ish asymmetric layout) -->
+<div class="grid grid-cols-1 gap-4">
+<!-- City Card: London -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(50,50,50,0.03)] hover:shadow-[0_8px_32px_rgba(50,50,50,0.06)] transition-all group flex justify-between items-center">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h2 class="text-xl font-bold tracking-tight">London</h2>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-high rounded-full font-bold uppercase tracking-wider text-secondary">Today</span>
+</div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-medium">+8 hours ahead</p>
+</div>
+<div class="text-right">
+<div class="text-3xl font-extrabold tracking-tight mono-text group-hover:text-primary transition-colors">17:42</div>
+<span class="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">BST (UTC+1)</span>
+</div>
+</div>
+<!-- City Card: Tokyo -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(50,50,50,0.03)] hover:shadow-[0_8px_32px_rgba(50,50,50,0.06)] transition-all group flex justify-between items-center">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h2 class="text-xl font-bold tracking-tight">Tokyo</h2>
+<span class="text-[10px] px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full font-bold uppercase tracking-wider">Tomorrow</span>
+</div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-medium">+16 hours ahead</p>
+</div>
+<div class="text-right">
+<div class="text-3xl font-extrabold tracking-tight mono-text group-hover:text-primary transition-colors">01:42</div>
+<span class="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">JST (UTC+9)</span>
+</div>
+</div>
+<!-- City Card: New York -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_20px_rgba(50,50,50,0.03)] hover:shadow-[0_8px_32px_rgba(50,50,50,0.06)] transition-all group flex justify-between items-center border-l-4 border-primary/20">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h2 class="text-xl font-bold tracking-tight">New York</h2>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-high rounded-full font-bold uppercase tracking-wider text-secondary">Today</span>
+</div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-medium">+3 hours ahead</p>
+</div>
+<div class="text-right">
+<div class="text-3xl font-extrabold tracking-tight mono-text group-hover:text-primary transition-colors">12:42</div>
+<span class="text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-tighter">EDT (UTC-4)</span>
+</div>
+</div>
+<!-- Add City Button -->
+<button class="mt-8 group flex items-center justify-center gap-3 w-full py-6 border-2 border-dashed border-outline-variant/30 rounded-xl hover:border-primary/40 hover:bg-primary/5 transition-all">
+<div class="bg-surface-container-high p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined block" data-icon="add">add</span>
+</div>
+<span class="text-sm font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary">Add Global Location</span>
+</button>
+</div>
+<!-- Visual Anchor Element -->
+<div class="mt-16 overflow-hidden rounded-2xl h-48 relative shadow-lg">
+<img alt="World map aesthetic" class="w-full h-full object-cover grayscale opacity-40" data-alt="Minimalist abstract representation of a world map with soft glowing nodes connecting major cities at night with cyan highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA7FBDaY6HKOrVIUIVoxRvl5eGKJB70u7oBvGSpXHhnhN-Qz448Oofw-2lbQMWx30XdGMPof2awIiSsMhbynjDo1Hx0wK7ADwGHoKi93SLktudK6b5KXFqNTP9mNvuMUJmJIyrfIJDWAloFyJd49RVhRkO-mRwDMXs0APt14rlGsUCZf4diCaBvvjxRKCEQaxlvSXokeSmMqePg3DnuvELhvN_X1Nju_ddm48PruTFI7FLiTcPfzIOpYJ8W8N_toqoF-Kk6Ye0dNKO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Global Connectivity Status</p>
+<p class="text-sm font-medium text-primary">All systems synchronized • 0.2ms latency</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4">
+<div class="bg-[#fcf9f8]/80 backdrop-blur-xl w-[90%] max-w-md rounded-full border border-[#b3b1b1]/15 shadow-[0_24px_40px_rgba(50,50,50,0.06)] flex justify-around items-center h-16 px-4">
+<div class="text-[#323232]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div class="bg-gradient-to-br from-[#483ff0] to-[#3a2ee4] text-white rounded-full p-3 scale-110 shadow-lg cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="calculate" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</div>
+<div class="text-[#323232]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</div>
+<div class="text-[#323232]/40 p-3 hover:text-[#483ff0] transition-colors cursor-pointer active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</div>
+</div>
+</nav>
+</body></html>
